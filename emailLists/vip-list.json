@@ -1,20 +1,9 @@
 [
   {
-    "email": "founder@startup.com",
+    "email": "jphnrr@mexicanpills.us",
     "name": "Alex Chen",
     "role": "Founder",
     "company": "TechCorp"
   },
-  {
-    "email": "cto@innovate.io",
-    "name": "Sam Rivera",
-    "role": "CTO",
-    "company": "InnovateLabs"
-  },
-  {
-    "email": "dev@codebase.dev",
-    "name": "Taylor Kim",
-    "role": "Lead Developer",
-    "company": "CodeBase Inc"
-  }
+ 
 ]
