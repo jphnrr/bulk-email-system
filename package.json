@@ -10,12 +10,12 @@
     "status": "node src/queue.js --status"
   },
   "dependencies": {
-    "nodemailer": "^6.9.9",
-    "node-cron": "^3.0.3",
-    "csv-parse": "^5.5.5",
-    "dotenv": "^16.4.5",
-    "uuid": "^9.0.1"
-  },
+  "nodemailer": "^8.0.7",   // ← 6.9.9 se update karo
+  "node-cron": "^3.0.4",    // ← 3.0.3 se update karo  
+  "csv-parse": "^5.5.5",
+  "dotenv": "^16.4.5",
+  "uuid": "^14.0.0"         // ← 9.0.1 se update karo
+},
   "engines": {
     "node": ">=16.0.0"
   },
