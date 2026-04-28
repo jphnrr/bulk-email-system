@@ -1,7 +1,7 @@
 {
   "name": "WordPress & SEO Services Outreach",
   "subject": "{{name}}, kya aapki website Google pe nahi aa rahi? 🚀",
-  "template": "wordpress-seo",
+  "template": "welcome",
   "emailList": "subscribers.csv",
   "description": "Cold outreach for WordPress design and SEO services",
   "defaultVariables": {
