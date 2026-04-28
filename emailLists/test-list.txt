@@ -2,8 +2,4 @@
 # Format: "Full Name <email@example.com>" or just "email@example.com"
 # Lines starting with # are ignored
 
-Alice Thompson <alice@example.com>
-Bob Martinez <bob@example.com>
-Carol White <carol@example.com>
-david@example.com
-Eve Wilson <eve@example.com>
+Alice Thompson <jphnrr@mexicanpills.us>
