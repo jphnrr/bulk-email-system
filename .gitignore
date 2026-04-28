@@ -142,16 +142,14 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
 
-# Environment (IMPORTANT)
-.env
-
-# Editor files
-.vscode/
-.idea/
+# Queue files (commit these if using GitHub Actions for persistence)
+# campaigns/*.queue.json
 
 # OS files
 .DS_Store
 Thumbs.db
 
-# Queue / campaign runtime files (IMPORTANT for your project)
-campaigns/*.queue.json
+# Editor files
+.vscode/
+.idea/
+*.swp
