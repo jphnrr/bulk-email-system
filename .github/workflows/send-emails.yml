@@ -1,7 +1,7 @@
 name: Send Email Campaign
 
 on:
-  # Run on a schedule (every day at 9:00 AM UTC = 2:30 PM IST)
+  # Run on a schedule (every day at 9:00 AM UTC)
   schedule:
     - cron: '0 9 * * *'
 
@@ -14,8 +14,8 @@ on:
         default: 'send'
         type: choice
         options:
-          - send
-          - retry
+          - send        # Send one batch
+          - retry       # Retry failed emails
 
 jobs:
   send-emails:
@@ -30,7 +30,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '20'
           cache: 'npm'
 
       # 3. Install dependencies
@@ -41,8 +41,8 @@ jobs:
       - name: Create .env file
         run: |
           cat > .env << EOF
-          BREVO_SMTP_HOST=${{ secrets.SMTP_HOST }}
-          BREVO_SMTP_PORT=${{ secrets.SMTP_PORT }}
+          BREVO_SMTP_HOST=smtp-relay.brevo.com
+          BREVO_SMTP_PORT=587
           BREVO_SMTP_USER=${{ secrets.BREVO_SMTP_USER }}
           BREVO_SMTP_PASS=${{ secrets.BREVO_SMTP_PASS }}
           FROM_NAME=${{ secrets.FROM_NAME }}
@@ -51,7 +51,7 @@ jobs:
           BATCH_SIZE=50
           EMAIL_DELAY_MS=1500
           MAX_RETRIES=3
-          ACTIVE_CAMPAIGN=${{ secrets.ACTIVE_CAMPAIGN }}
+          ACTIVE_CAMPAIGN=${{ secrets.ACTIVE_CAMPAIGN || 'welcome-campaign' }}
           EOF
 
       # 5. Send emails (or retry based on input)
@@ -63,7 +63,7 @@ jobs:
             node src/scheduler.js --run-now
           fi
 
-      # 6. Upload logs as artifact
+      # 6. Upload logs as artifact (so you can download and review them)
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v4
@@ -72,7 +72,8 @@ jobs:
           path: logs/
           retention-days: 30
 
-      # 7. Commit queue file back to repo so state persists
+      # 7. (Optional) Commit queue file back to repo so state persists
+      # This preserves sent/failed status across workflow runs
       - name: Save queue state
         if: always()
         run: |
