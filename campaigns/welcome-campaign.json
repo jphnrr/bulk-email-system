@@ -1,16 +1,43 @@
 {
-  "name": "Welcome Campaign - New Subscribers",
-  "subject": "Welcome to {{companyName}}, {{name}}! 🎉",
-  "template": "welcome",
+  "name": "WordPress & SEO Services Outreach",
+  "subject": "{{name}}, kya aapki website Google pe nahi aa rahi? 🚀",
+  "template": "wordpress-seo",
   "emailList": "subscribers.csv",
-  "description": "Onboarding email sent to all new subscribers",
+  "description": "Cold outreach for WordPress design and SEO services",
   "defaultVariables": {
-    "companyName": "Your Company",
-    "companyAddress": "123 Main Street, New York, NY 10001",
-    "supportEmail": "support@yourcompany.com",
-    "ctaText": "Go to Dashboard",
-    "ctaUrl": "https://gmail.com",
-    "unsubscribeUrl": "https://gmail.com",
-    "privacyUrl": "https://gmail.com"
+    "companyName": "Aapka Naam / Agency",
+    "companyAddress": "Lucknow, Uttar Pradesh",
+    "senderName": "Aapka Naam",
+    "senderTitle": "WordPress & SEO Specialist",
+    "replyEmail": "aap@domain.com",
+
+    "serviceBadge": "WordPress & SEO",
+    "emailTitle": "Aapki website ko Google ka #1 banana chahte hain",
+    "emailSubtitle": "Professional Web Design + SEO jo results deta hai",
+
+    "openingLine": "Aaj main aapke paas ek specific reason se aaya hoon — maine dekha ki aapka business online grow karne ki potential hai, lekin website us level pe nahi hai jo chahiye.",
+
+    "problemStatement": "Aaj ke time mein agar aapki website slow hai, mobile-friendly nahi hai, ya Google pe nazar nahi aati — to aap har din potential customers kho rahe hain.",
+
+    "solutionIntro": "Main WordPress websites design karta hoon aur SEO karta hoon jo sirf dikhne mein nahi, balki actual leads aur sales laane mein kaam aati hain.",
+
+    "wpServiceDesc": "Clean, fast aur mobile-friendly WordPress website jo aapke business ko professionally represent kare.",
+    "seoServiceDesc": "On-page aur local SEO jo aapko Google search mein top pe laaye aur organic traffic badhaye.",
+    "speedServiceDesc": "Website speed optimization — slow website 70% visitors ko bhaga deti hai, hum use fix karte hain.",
+
+    "offerLabel": "Limited Time Offer",
+    "offerHeadline": "Free Website Audit + 1 Month SEO Consultation",
+    "offerDetail": "Pehle 10 clients ke liye — koi hidden charges nahi",
+
+    "ctaText": "Free Audit Book Karein →",
+    "ctaUrl": "https://aapki-website.com/contact",
+
+    "testimonialText": "Sirf 3 mahine mein meri website ka organic traffic 3x ho gaya. Best investment thi mere business ke liye.",
+    "testimonialAuthor": "Ramesh Gupta",
+    "testimonialBusiness": "Gupta Jewellers, Lucknow",
+
+    "closingLine": "Agar aap seriously apna online presence grow karna chahte hain to ek baar baat karte hain — bilkul free. Reply kar dijiye ya upar wala button click karein.",
+
+    "unsubscribeUrl": "https://aapki-website.com/unsubscribe"
   }
 }
