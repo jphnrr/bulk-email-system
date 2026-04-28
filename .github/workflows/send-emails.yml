@@ -1,0 +1,84 @@
+name: Send Email Campaign
+
+on:
+  # Run on a schedule (every day at 9:00 AM UTC)
+  schedule:
+    - cron: '0 9 * * *'
+
+  # Also allow manual trigger from GitHub UI
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Action to perform'
+        required: true
+        default: 'send'
+        type: choice
+        options:
+          - send        # Send one batch
+          - retry       # Retry failed emails
+
+jobs:
+  send-emails:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout your code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Create .env file from GitHub Secrets
+      - name: Create .env file
+        run: |
+          cat > .env << EOF
+          BREVO_SMTP_HOST=smtp-relay.brevo.com
+          BREVO_SMTP_PORT=587
+          BREVO_SMTP_USER=${{ secrets.BREVO_SMTP_USER }}
+          BREVO_SMTP_PASS=${{ secrets.BREVO_SMTP_PASS }}
+          FROM_NAME=${{ secrets.FROM_NAME }}
+          FROM_EMAIL=${{ secrets.FROM_EMAIL }}
+          REPLY_TO=${{ secrets.REPLY_TO }}
+          BATCH_SIZE=50
+          EMAIL_DELAY_MS=1500
+          MAX_RETRIES=3
+          ACTIVE_CAMPAIGN=${{ secrets.ACTIVE_CAMPAIGN || 'welcome-campaign' }}
+          EOF
+
+      # 5. Send emails (or retry based on input)
+      - name: Send emails
+        run: |
+          if [ "${{ github.event.inputs.action }}" = "retry" ]; then
+            node src/scheduler.js --retry-failed
+          else
+            node src/scheduler.js --run-now
+          fi
+
+      # 6. Upload logs as artifact (so you can download and review them)
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: email-logs-${{ github.run_number }}
+          path: logs/
+          retention-days: 30
+
+      # 7. (Optional) Commit queue file back to repo so state persists
+      # This preserves sent/failed status across workflow runs
+      - name: Save queue state
+        if: always()
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add campaigns/*.queue.json logs/ || true
+          git diff --staged --quiet || git commit -m "📧 Update queue state [skip ci]"
+          git push || true
