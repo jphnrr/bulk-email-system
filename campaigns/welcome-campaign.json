@@ -9,8 +9,8 @@
     "companyAddress": "123 Main Street, New York, NY 10001",
     "supportEmail": "support@yourcompany.com",
     "ctaText": "Go to Dashboard",
-    "ctaUrl": "https://yourcompany.com/dashboard",
-    "unsubscribeUrl": "https://yourcompany.com/unsubscribe",
-    "privacyUrl": "https://yourcompany.com/privacy"
+    "ctaUrl": "https://gmail.com",
+    "unsubscribeUrl": "https://gmail.com",
+    "privacyUrl": "https://gmail.com"
   }
 }
