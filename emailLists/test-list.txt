@@ -1,5 +1,0 @@
-# Email list in plain text format
-# Format: "Full Name <email@example.com>" or just "email@example.com"
-# Lines starting with # are ignored
-
-Alice Thompson <jphnrr@mexicanpills.us>
