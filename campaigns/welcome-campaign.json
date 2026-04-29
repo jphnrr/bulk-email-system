@@ -1,0 +1,16 @@
+{
+  "name": "Welcome Campaign - New Subscribers",
+  "subject": "Welcome to {{companyName}}, {{name}}! 🎉",
+  "template": "welcome",
+  "emailList": "subscribers.csv",
+  "description": "Onboarding email sent to all new subscribers",
+  "defaultVariables": {
+    "companyName": "Your Company",
+    "companyAddress": "123 Main Street, New York, NY 10026",
+    "supportEmail": "support@freelancersdev.com",
+    "ctaText": "Go to Dashboard",
+    "ctaUrl": "https://freelancersdev.com/dashboard",
+    "unsubscribeUrl": "https://freelancersdev.com/unsubscribe",
+    "privacyUrl": "https://freelancersdev.com/privacy"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "bulk-email-automation",
+  "version": "1.0.0",
+  "description": "Production-ready bulk email automation system using Brevo SMTP",
+  "main": "src/scheduler.js",
+  "scripts": {
+    "start": "node src/scheduler.js",
+    "send": "node src/scheduler.js --run-now",
+    "retry": "node src/scheduler.js --retry-failed",
+    "status": "node src/queue.js --status"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.9",
+    "node-cron": "^3.0.3",
+    "csv-parse": "^5.5.5",
+    "dotenv": "^16.4.5",
+    "uuid": "^9.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Welcome to {{companyName}}</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background-color: #f4f6f9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    
+    /* Wrapper */
+    .wrapper {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .header h1 {
+      color: #ffffff;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .header p {
+      color: rgba(255,255,255,0.85);
+      font-size: 16px;
+      margin-top: 8px;
+    }
+
+    /* Body */
+    .body {
+      padding: 48px 40px;
+    }
+    .greeting {
+      font-size: 22px;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 16px;
+    }
+    .body p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #4a5568;
+      margin-bottom: 20px;
+    }
+
+    /* CTA Button */
+    .btn-wrapper {
+      text-align: center;
+      margin: 36px 0;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #ffffff !important;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 16px 40px;
+      border-radius: 50px;
+      letter-spacing: 0.3px;
+    }
+
+    /* Feature boxes */
+    .features {
+      display: table;
+      width: 100%;
+      margin: 32px 0;
+      border-collapse: separate;
+      border-spacing: 12px;
+    }
+    .feature {
+      display: table-cell;
+      background: #f8f9ff;
+      border-radius: 10px;
+      padding: 20px;
+      width: 33%;
+      text-align: center;
+      vertical-align: top;
+    }
+    .feature-icon { font-size: 28px; margin-bottom: 10px; }
+    .feature h3 { font-size: 14px; font-weight: 600; color: #1a1a2e; margin-bottom: 6px; }
+    .feature p { font-size: 13px; color: #718096; line-height: 1.5; margin-bottom: 0; }
+
+    /* Divider */
+    .divider {
+      border: none;
+      border-top: 1px solid #e8ecf0;
+      margin: 32px 0;
+    }
+
+    /* Footer */
+    .footer {
+      background: #f8f9ff;
+      padding: 32px 40px;
+      text-align: center;
+    }
+    .footer p {
+      font-size: 13px;
+      color: #a0aec0;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+    .footer a { color: #667eea; text-decoration: none; }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header, .body, .footer { padding: 32px 24px; }
+      .features { display: block; }
+      .feature { display: block; width: 100%; margin-bottom: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <h1>{{companyName}}</h1>
+      <p>We're glad you're here 🎉</p>
+    </div>
+
+    <!-- BODY -->
+    <div class="body">
+      <p class="greeting">Welcome, {{name}}!</p>
+
+      <p>
+        Thank you for joining <strong>{{companyName}}</strong>. We're thrilled to have you 
+        on board and can't wait for you to experience everything we have to offer.
+      </p>
+
+      <p>
+        Your account is now active and ready to use. Here's what you can do next:
+      </p>
+
+      <!-- Feature Boxes -->
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">🚀</div>
+          <h3>Get Started</h3>
+          <p>Explore your dashboard and set up your profile</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📚</div>
+          <h3>Learn</h3>
+          <p>Browse our guides and tutorials to get the most out of our platform</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">💬</div>
+          <h3>Support</h3>
+          <p>Our team is here 24/7 to help you with anything you need</p>
+        </div>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="btn-wrapper">
+        <a href="{{ctaUrl}}" class="btn">{{ctaText}}</a>
+      </div>
+
+      <hr class="divider" />
+
+      <p>
+        If you have any questions, simply reply to this email or reach out at 
+        <a href="mailto:{{supportEmail}}" style="color:#667eea;">{{supportEmail}}</a>.
+      </p>
+
+      <p>
+        Happy to have you,<br />
+        <strong>The {{companyName}} Team</strong>
+      </p>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        You received this email because you signed up at <strong>{{companyName}}</strong>.<br />
+        {{companyAddress}}
+      </p>
+      <p>
+        <a href="{{unsubscribeUrl}}">Unsubscribe</a> &nbsp;|&nbsp;
+        <a href="{{privacyUrl}}">Privacy Policy</a>
+      </p>
+      <p style="margin-top: 12px; font-size: 11px; color: #cbd5e0;">
+        © {{year}} {{companyName}}. All rights reserved.
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

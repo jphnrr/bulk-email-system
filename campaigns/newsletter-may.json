@@ -1,0 +1,27 @@
+{
+  "name": "Monthly Newsletter - May 2025",
+  "subject": "📰 The {{companyName}} Newsletter — {{month}} Edition",
+  "template": "newsletter",
+  "emailList": "subscribers.csv",
+  "description": "Monthly newsletter with company updates and news",
+  "defaultVariables": {
+    "companyName": "Your Company",
+    "companyAddress": "123 Main Street, New York, NY 10001",
+    "newsletterTagline": "Your monthly dose of insights and updates",
+    "issueNumber": "12",
+    "month": "May",
+    "heroTitle": "Exciting New Features You Need to Know About",
+    "heroContent": "We have been working hard behind the scenes to bring you features that make your work easier. This month, we are launching three new tools that our community has been requesting for a long time.",
+    "heroUrl": "https://yourcompany.com/blog/new-features",
+    "story2Title": "Community Spotlight",
+    "story2Content": "Meet the members of our community who are doing incredible work. This month we feature three power users who share their tips.",
+    "story3Title": "Upcoming Events",
+    "story3Content": "Join us for our virtual summit next month. Register now for early access and save your spot among 2,000 attendees.",
+    "ctaHeading": "Ready to Level Up?",
+    "ctaDescription": "Upgrade to Pro and unlock unlimited access to all features, priority support, and exclusive content.",
+    "ctaText": "Upgrade Now →",
+    "ctaUrl": "https://yourcompany.com/upgrade",
+    "unsubscribeUrl": "https://yourcompany.com/unsubscribe",
+    "privacyUrl": "https://yourcompany.com/privacy"
+  }
+}

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{newsletterTitle}} — {{companyName}}</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background-color: #0f0f0f; font-family: Georgia, 'Times New Roman', serif; color: #1a1a1a; }
+
+    .wrapper {
+      max-width: 620px;
+      margin: 30px auto;
+      background: #fefefe;
+      border: 1px solid #e0e0e0;
+    }
+
+    /* Masthead */
+    .masthead {
+      border-bottom: 3px solid #1a1a1a;
+      padding: 24px 40px;
+      text-align: center;
+    }
+    .masthead .issue {
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 12px;
+    }
+    .masthead h1 {
+      font-size: 38px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: #0a0a0a;
+    }
+    .masthead .tagline {
+      font-size: 13px;
+      color: #777;
+      font-style: italic;
+      margin-top: 6px;
+    }
+    .masthead .date-line {
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      color: #aaa;
+      margin-top: 8px;
+      letter-spacing: 1px;
+    }
+
+    /* Hero Article */
+    .hero {
+      padding: 36px 40px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .hero .label {
+      font-family: 'Courier New', monospace;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #c0392b;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+    .hero h2 {
+      font-size: 28px;
+      line-height: 1.3;
+      font-weight: 900;
+      color: #0a0a0a;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    /* Read More */
+    .read-more {
+      display: inline-block;
+      margin-top: 20px;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #c0392b;
+      text-decoration: none;
+      border-bottom: 1px solid #c0392b;
+      padding-bottom: 2px;
+    }
+
+    /* 2-column section */
+    .two-col {
+      display: table;
+      width: 100%;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .col {
+      display: table-cell;
+      padding: 28px 40px;
+      width: 50%;
+      vertical-align: top;
+    }
+    .col:first-child { border-right: 1px solid #e0e0e0; }
+    .col h3 {
+      font-size: 18px;
+      font-weight: 900;
+      color: #0a0a0a;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .col p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    /* Highlight box */
+    .highlight {
+      background: #1a1a1a;
+      color: #fefefe;
+      padding: 32px 40px;
+      text-align: center;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .highlight h3 {
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .highlight p {
+      font-size: 14px;
+      color: #bbb;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .highlight a {
+      display: inline-block;
+      background: #fefefe;
+      color: #1a1a1a;
+      text-decoration: none;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 28px 40px;
+      background: #f7f7f7;
+      border-top: 3px solid #1a1a1a;
+    }
+    .footer p {
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      color: #999;
+      line-height: 1.8;
+      text-align: center;
+    }
+    .footer a { color: #555; }
+
+    @media (max-width: 600px) {
+      .masthead, .hero, .col, .highlight, .footer { padding: 24px 20px; }
+      .two-col, .col { display: block; width: 100%; }
+      .col:first-child { border-right: none; border-bottom: 1px solid #e0e0e0; }
+      .masthead h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <p class="issue">Issue #{{issueNumber}} &nbsp;·&nbsp; {{month}} Edition</p>
+    <h1>{{companyName}}</h1>
+    <p class="tagline">{{newsletterTagline}}</p>
+    <p class="date-line">{{date}}</p>
+  </div>
+
+  <!-- HERO STORY -->
+  <div class="hero">
+    <p class="label">Feature Story</p>
+    <h2>{{heroTitle}}</h2>
+    <p>{{heroContent}}</p>
+    <a href="{{heroUrl}}" class="read-more">Read more →</a>
+  </div>
+
+  <!-- TWO COLUMN -->
+  <div class="two-col">
+    <div class="col">
+      <h3>{{story2Title}}</h3>
+      <p>{{story2Content}}</p>
+    </div>
+    <div class="col">
+      <h3>{{story3Title}}</h3>
+      <p>{{story3Content}}</p>
+    </div>
+  </div>
+
+  <!-- HIGHLIGHT / CTA -->
+  <div class="highlight">
+    <h3>{{ctaHeading}}</h3>
+    <p>{{ctaDescription}}</p>
+    <a href="{{ctaUrl}}">{{ctaText}}</a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>
+      Hi {{name}}, you're receiving this because you subscribed at {{companyName}}.<br />
+      {{companyAddress}}<br /><br />
+      <a href="{{unsubscribeUrl}}">Unsubscribe</a> &nbsp;|&nbsp; 
+      <a href="{{privacyUrl}}">Privacy Policy</a><br /><br />
+      © {{year}} {{companyName}}
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
